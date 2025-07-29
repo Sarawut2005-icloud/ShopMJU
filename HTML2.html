@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รวมของที่ระลึก 30ปี วิทยาการคอมพิวเตอร์ - สำหรับลูกค้า</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #388e3c;
+            --secondary: #8bc34a;
+            --accent: #cddc39;
+            --bg: #f7faf7;
+            --white: #fff;
+            --gray: #f0f4f0;
+            --shadow: 0 8px 32px rgba(56, 142, 60, 0.10);
+            --radius: 22px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(120deg, #e8f5e9 0%, #f0f4f0 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .pattern {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.07;
+            background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+        }
+        .main-wrap {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            justify-content: center;
+        }
+        .card {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 540px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 44px 36px 36px 36px;
+            position: relative;
+            z-index: 1;
+            animation: fadein 0.7s cubic-bezier(.4,0,.2,1);
+            overflow: hidden;
+        }
+        .product-image-container {
+            max-width: 300px;
+            background: var(--gray);
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+            min-height: 180px;
+            margin: 20px auto;
+            border: 1px solid #c8e6c9;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+        }
+        .product-image-container img {
+            max-width: 100%;
+            max-height: 150px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.2s ease-in-out;
+        }
+        .product-image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .maejo-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .maejo-header img {
+            height: 54px;
+            border-radius: 14px;
+            background: #e8f5e9;
+            padding: 5px;
+            box-shadow: 0 2px 8px #c8e6c930;
+        }
+        .maejo-header span {
+            font-size: 1.35em;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-shadow: 0 1px 0 #cddc39a0;
+        }
+        .bar {
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+            border-radius: 0 0 14px 14px;
+            margin-bottom: 22px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.1em;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #4e5d6c;
+            text-align: center;
+            font-size: 1.13em;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 26px;
+        }
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            color: #2d3a4b;
+            font-weight: 600;
+            font-size: 1.04em;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.7px solid #c8e6c9;
+            border-radius: 12px;
+            margin-bottom: 13px;
+            font-size: 1.04em;
+            background: var(--gray);
+            transition: border 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+            cursor: text;
+        }
+        select {
+            cursor: pointer;
+        }
+        input:focus, select:focus, textarea:focus {
+            border: 1.7px solid var(--primary);
+            outline: none;
+            background: #e8f5e9;
+            box-shadow: 0 0 0 2px #cddc39a0;
+        }
+        input[id^="other"] {
+            margin-top: 8px;
+            border-color: #a5d6a7;
+            background-color: #e8f5e9;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 0;
+            font-size: 1.12em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 12px;
+            box-shadow: 0 2px 10px rgba(56, 142, 60, 0.10);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .btn:hover, .btn:focus {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            box-shadow: 0 4px 18px rgba(139, 195, 74, 0.13);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .nav-btns {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 32px;
+        }
+        .nav-btns .btn {
+            width: 48%;
+            margin-top: 0;
+        }
+        .decor {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.13;
+            pointer-events: none;
+        }
+        .decor.circle1 {
+            width: 110px; height: 110px;
+            background: radial-gradient(circle at 30% 30%, var(--primary) 60%, transparent 100%);
+            border-radius: 50%;
+            top: -40px; left: -40px;
+        }
+        .decor.circle2 {
+            width: 70px; height: 70px;
+            background: radial-gradient(circle at 70% 70%, var(--accent) 70%, transparent 100%);
+            border-radius: 50%;
+            bottom: -30px; right: -30px;
+        }
+        .decor.triangle {
+            width: 0; height: 0;
+            border-left: 44px solid transparent;
+            border-right: 44px solid transparent;
+            border-bottom: 76px solid var(--secondary);
+            top: 18px; right: -30px;
+            opacity: 0.09;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--gray);
+            border-radius: 15px;
+            border: 1px solid #c8e6c9;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-code-container img {
+            max-width: 180px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .qr-code-container p {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background-color: var(--white);
+            margin: auto;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 90%;
+            max-width: 500px;
+            animation: fadeInScale 0.3s ease-out;
+            position: relative;
+        }
+        .modal-content h3 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+        .modal-content p {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: #333;
+            line-height: 1.6;
+        }
+        .modal-content p strong {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .modal-buttons .btn {
+            width: auto;
+            padding: 12px 25px;
+            font-size: 1em;
+            margin-top: 0;
+        }
+        .modal-buttons .btn.cancel {
+            background: #e0e0e0;
+            color: #555;
+            box-shadow: none;
+            transition: background 0.2s, color 0.2s, transform 0.1s;
+        }
+        .modal-buttons .btn.cancel:hover {
+            background: #bdbdbd;
+            color: #333;
+            transform: translateY(-1px);
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.85em;
+            margin-top: -8px;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, height 0.3s ease;
+        }
+        .error-message.show {
+            opacity: 1;
+            height: auto;
+            margin-top: 5px;
+            margin-bottom: 13px;
+        }
+        input.invalid {
+            border-color: #d32f2f !important;
+        }
+
+        .selected-items-summary {
+            background: var(--white);
+            border: 1px dashed var(--primary);
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(56, 142, 60, 0.05);
+        }
+        .selected-items-summary h3 {
+            color: var(--primary);
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .selected-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dotted #eee;
+            font-size: 0.95em;
+            color: #4e5d6c;
+        }
+        .selected-item:last-child {
+            border-bottom: none;
+        }
+        .selected-item .item-details {
+            flex-grow: 1;
+        }
+        .selected-item .item-price {
+            font-weight: bold;
+            color: var(--primary);
+            margin-left: 10px;
+        }
+        .selected-item .remove-btn {
+            background: none;
+            border: none;
+            color: #d32f2f;
+            font-size: 0.9em;
+            cursor: pointer;
+            padding: 0 5px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .selected-item .remove-btn:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .total-price-display {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: right;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 2px solid var(--accent);
+        }
+
+        .add-item-btn {
+            background: var(--accent);
+            color: #333;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px rgba(205, 220, 57, 0.2);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .add-item-btn:hover {
+            background: #d4e157;
+            box-shadow: 0 4px 12px rgba(205, 220, 57, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .current-item-price-display {
+            text-align: right;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: -8px;
+            margin-bottom: 15px;
+            padding-right: 5px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+
+        @media (max-width: 900px) {
+            .main-wrap {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .card {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .card { padding: 18px 2vw 18px 2vw; }
+            h1 { font-size: 1.2em; }
+            .maejo-header img { height: 36px; }
+            .decor.circle1, .decor.circle2 { display: none; }
+            .product-image-container {
+                max-width: 250px;
+                min-height: 150px;
+            }
+            .product-image-container img {
+                max-height: 120px;
+            }
+            .qr-code-container img {
+                max-width: 150px;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+            .modal-content h3 {
+                font-size: 1.2em;
+            }
+            .modal-content p {
+                font-size: 0.95em;
+            }
+            .modal-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .modal-buttons .btn {
+                width: 100%;
+            }
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: none;}
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9);}
+            to { opacity: 1; transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="main-wrap">
+        <div class="card" id="page2">
+            <div class="decor circle1"></div>
+            <div class="decor circle2"></div>
+            <div class="decor triangle"></div>
+            <div class="maejo-header">
+                <img src="https://upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/800px-MJU_LOGO.svg.png" alt="Maejo Logo" onerror="this.src='no_image_available.png';">
+                <span>Maejo University</span>
+            </div>
+            <div class="bar"></div>
+            <h1>รวมของที่ระลึก 30ปี</h1>
+            <h2>สำหรับลูกค้า</h2>
+            <form id="customerForm" novalidate>
+                <label for="fullName">ชื่อ-นามสกุล</label>
+                <input type="text" id="fullName" required pattern="[A-Za-zก-ฮ\s]+" title="กรุณากรอกเฉพาะตัวอักษร" autocomplete="name">
+                <span class="error-message" id="fullNameError"></span>
+
+                <label for="provinceSelect">จังหวัด</label>
+                <select id="provinceSelect" required onchange="populateDistricts();"></select>
+                <span class="error-message" id="provinceSelectError"></span>
+
+                <label for="districtSelect">อำเภอ/เขต</label>
+                <select id="districtSelect" required onchange="handleDistrictChange();"></select>
+                <input type="text" id="otherDistrictInput" placeholder="ระบุอำเภอ/เขตอื่น ๆ" style="display:none;">
+                <span class="error-message" id="districtError"></span>
+
+                <label for="subDistrictSelect">ตำบล/แขวง</label>
+                <select id="subDistrictSelect" required onchange="handleSubDistrictChange();"></select>
+                <input type="text" id="otherSubDistrictInput" placeholder="ระบุตำบล/แขวงอื่น ๆ" style="display:none;">
+                <span class="error-message" id="subDistrictError"></span>
+
+                <label for="postcode">รหัสไปรษณีย์</label>
+                <input type="text" id="postcode" required pattern="[0-9]{5}" title="กรุณากรอกรหัสไปรษณีย์ 5 หลัก" autocomplete="postal-code" readonly>
+                <input type="text" id="otherPostcodeInput" placeholder="ระบุรหัสไปรษณีย์ 5 หลัก" style="display:none;" pattern="[0-9]{5}" title="กรุณากรอกรหัสไปรษณีย์ 5 หลัก">
+                <span class="error-message" id="postcodeError"></span>
+
+                <label for="detailedAddress">รายละเอียดที่อยู่ (บ้านเลขที่, ถนน ฯลฯ)</label>
+                <textarea id="detailedAddress" rows="2" required></textarea>
+                <span class="error-message" id="detailedAddressError"></span>
+
+                <label for="phone">เบอร์โทร</label>
+                <input type="tel" id="phone" required pattern="[0-9]{10}" title="กรุณากรอกเบอร์โทรศัพท์ 10 หลัก" autocomplete="tel">
+                <span class="error-message" id="phoneError"></span>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+                <h3 style="color: var(--primary); text-align: center; margin-bottom: 20px;">เลือกสินค้าเพิ่มลงรายการ</h3>
+
+                <label for="productSelect">เลือกรายการสินค้า</label>
+                <select id="productSelect" onchange="toggleShirtOptions(); updateProductImage(); updateCurrentItemPrice();">
+                    <option value="">-- เลือกสินค้า --</option>
+                    <option value="เสื้อ">เสื้อ</option>
+                    <option value="กระเป๋า">กระเป๋า</option>
+                    <option value="แก้ว">แก้ว</option>
+                    <option value="หมวก">หมวก</option>
+                    <option value="ร่ม">ร่ม</option>
+                    <option value="เข็มกลัด">เข็มกลัด</option>
+                    <option value="สมุด">สมุด</option>
+                    <option value="ปากกา">ปากกา</option>
+                </select>
+                <span class="error-message" id="productSelectError"></span>
+
+                <div class="product-image-container">
+                    <img id="productDisplayImage" src="#" alt="" onerror="this.src='no_image_available.png';">
+                </div>
+
+                <div id="shirtOptions" style="display:none;">
+                    <label for="shirtSize">ขนาด (สำหรับเสื้อ)</label>
+                    <select id="shirtSize" onchange="updateProductImage(); updateCurrentItemPrice();">
+                        <option value="">-- เลือกขนาด --</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                    </select>
+                    <span class="error-message" id="shirtSizeError"></span>
+
+                    <label for="shirtColor">สี (สำหรับเสื้อ)</label>
+                    <select id="shirtColor" onchange="updateProductImage(); updateCurrentItemPrice();">
+                        <option value="">-- เลือกสี --</option>
+                        <option>ขาว</option>
+                        <option>ดำ</option>
+                    </select>
+                    <span class="error-message" id="shirtColorError"></span>
+                </div>
+
+                <label for="quantity">จำนวน</label>
+                <input type="number" id="quantity" min="1" value="1" oninput="updateCurrentItemPrice();">
+                <span class="error-message" id="quantityError"></span>
+                
+                <div class="current-item-price-display" id="currentItemPrice">
+                    ราคา: 0 บาท
+                </div>
+
+                <button type="button" class="add-item-btn" id="addItemButton">เพิ่มลงรายการ</button>
+
+                <div id="selectedItemsSummary" class="selected-items-summary" style="display:none;">
+                    <h3>รายการสินค้าที่เลือก</h3>
+                    <div id="itemsList">
+                    </div>
+                    <div id="totalPriceDisplay" class="total-price-display">
+                        ราคารวม: 0 บาท
+                    </div>
+                </div>
+                <span class="error-message" id="selectedItemsError">กรุณาเพิ่มสินค้าลงในรายการอย่างน้อย 1 ชิ้น</span>
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+
+
+                <label for="additionalDetails">รายละเอียดเพิ่มเติม</label>
+                <textarea id="additionalDetails" rows="2"></textarea>
+
+                <label for="paymentSlip">แนบรูปสลิปโอนเงิน</label>
+                <input type="file" id="paymentSlip" accept="image/*">
+
+                <label for="purchaseDate">วันที่ซื้อ</label>
+                <input type="date" id="purchaseDate" required min="2025-07-29" max="2025-08-31">
+                <span class="error-message" id="purchaseDateError"></span>
+
+                <label for="deliveryMethod">วิธีรับสินค้า</label>
+                <select id="deliveryMethod" required>
+                    <option value="">-- เลือก --</option>
+                    <option>จัดส่ง</option>
+                    <option>รับเอง</option>
+                </select>
+                <span class="error-message" id="deliveryMethodError"></span>
+
+                <label for="paymentMethod">ช่องทางชำระเงิน</label>
+                <select id="paymentMethod" required onchange="toggleQRCodeDisplay();">
+                    <option value="">-- เลือก --</option>
+                    <option>โอนเงิน</option>
+                    <option>เงินสด</option>
+                </select>
+                <span class="error-message" id="paymentMethodError"></span>
+
+                <div id="qrCodeContainer" class="qr-code-container">
+                    <img src="MYQR.jpg" alt="QR Code" onerror="this.src='no_image_available.png';">
+                    <p>สแกนเพื่อโอนเงิน</p>
+                </div>
+
+                <div class="nav-btns">
+                    <button type="button" class="btn" onclick="window.location.href='HTML1.html'">&larr; กลับหน้า Admin</button>
+                    <button type="submit" class="btn">ส่งข้อมูล</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3>ยืนยันข้อมูลการสั่งซื้อ</h3>
+            <div id="modalSummary">
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn cancel" id="cancelConfirm">แก้ไข</button>
+                <button type="button" class="btn" id="confirmSubmit">ยืนยันและส่งข้อมูล</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const defaultProductImage = 'image_9802de.jpg';
+        const noImageAvailable = 'no_image_available.png';
+
+        const productPrices = {
+            "เสื้อ": {
+                "S": 299, "M": 299, "L": 299, "XL": 299, "XXL": 299,
+                "default": 299
+            },
+            "กระเป๋า": 350,
+            "แก้ว": 180,
+            "หมวก": 220,
+            "ร่ม": 280,
+            "เข็มกลัด": 80,
+            "สมุด": 120,
+            "ปากกา": 60
+        };
+
+        const thaiAddresses = {
+            "กรุงเทพมหานคร": {
+                "เขตจตุจักร": {
+                    "จตุจักร": "10900",
+                    "ลาดยาว": "10900",
+                    "เสนานิคม": "10900"
+                },
+                "เขตบางกะปิ": {
+                    "คลองจั่น": "10240",
+                    "หัวหมาก": "10240"
+                }
+            },
+            "เชียงใหม่": {
+                "เมืองเชียงใหม่": {
+                    "ช้างเผือก": "50300",
+                    "ศรีภูมิ": "50200",
+                    "สุเทพ": "50200",
+                    "ในเมือง": "50000"
+                },
+                "จอมทอง": {
+                    "บ้านหลวง": "50160",
+                    "ข่วงเปา": "50160"
+                },
+                "แม่แจ่ม": {
+                    "ช่างเคิ่ง": "50270",
+                    "ท่าผา": "50270"
+                },
+                "แม่แตง": {
+                    "ขี้เหล็ก": "50150",
+                    "แม่แตง": "50150"
+                },
+                "แม่ริม": {
+                    "ริมใต้": "50180",
+                    "ริมเหนือ": "50180",
+                    "ดอนแก้ว": "50180"
+                },
+                "แม่วาง": {
+                    "ทุ่งปี้": "50360",
+                    "แม่วิน": "50360"
+                },
+                "แม่อาย": {
+                    "แม่อาย": "50280",
+                    "ท่าตอน": "50280"
+                },
+                "ฝาง": {
+                    "เวียง": "50110",
+                    "สันทราย": "50110"
+                },
+                "เชียงดาว": {
+                    "เชียงดาว": "50170",
+                    "เมืองงาย": "50170"
+                },
+                "ฮอด": {
+                    "หางดง": "50240",
+                    "บ่อหลวง": "50240"
+                },
+                "พร้าว": {
+                    "เวียง": "50190",
+                    "บ้านโป่ง": "50190"
+                },
+                "สันป่าตอง": {
+                    "ยุหว่า": "50120",
+                    "มะขุนหวาน": "50120"
+                },
+                "สะเมิง": {
+                    "สะเมิงใต้": "50250",
+                    "สะเมิงเหนือ": "50250"
+                },
+                "ดอยสะเก็ด": {
+                    "เชิงดอย": "50220",
+                    "ตลาดขวัญ": "50220"
+                },
+                "หางดง": {
+                    "หางดง": "50230",
+                    "หนองแก๋ว": "50230"
+                },
+                "สันกำแพง": {
+                    "สันกำแพง": "50130",
+                    "ทรายมูล": "50130"
+                },
+                "สารภี": {
+                    "ยางเนิ้ง": "50140",
+                    "หนองผึ้ง": "50140"
+                },
+                "ดอยหล่อ": {
+                    "ยางคราม": "50160",
+                    "ดอยหล่อ": "50160"
+                },
+                "แม่ออน": {
+                    "บ้านสหกรณ์": "50130",
+                    "ออนใต้": "50130"
+                },
+                "อมก๋อย": {
+                    "อมก๋อย": "50310",
+                    "ยางเปียง": "50310"
+                },
+                "ไชยปราการ": {
+                    "หนองบัว": "50320",
+                    "ปงตำ": "50320"
+                },
+                "ดอยเต่า": {
+                    "ท่าเดื่อ": "50260",
+                    "บ่อหลวง": "50260"
+                },
+                "เวียงแหง": {
+                    "เมืองแหง": "50380",
+                    "แสนไห": "50380"
+                },
+                "กัลยาณิวัฒนา": {
+                    "แจ่มหลวง": "50270",
+                    "บ้านจันทร์": "50270"
+                }
+            },
+            "ขอนแก่น": {
+                "เมืองขอนแก่น": {
+                    "ในเมือง": "40000",
+                    "พระลับ": "40000",
+                    "ศิลา": "40000"
+                },
+                "บ้านไผ่": {
+                    "บ้านไผ่": "40110",
+                    "หินตั้ง": "40110"
+                },
+                "พล": {
+                    "เมืองพล": "40120",
+                    "โจดหนองแก": "40120"
+                }
+            },
+            "ชลบุรี": {
+                "เมืองชลบุรี": {
+                    "บางปลาสร้อย": "20000",
+                    "มะขามหย่ง": "20000",
+                    "บ้านสวน": "20000"
+                },
+                "ศรีราชา": {
+                    "ศรีราชา": "20110",
+                    "สุรศักดิ์": "20110",
+                    "ทุ่งสุขลา": "20230"
+                },
+                "บางละมุง": {
+                    "นาเกลือ": "20150",
+                    "หนองปรือ": "20150"
+                }
+            },
+            "ภูเก็ต": {
+                "เมืองภูเก็ต": {
+                    "ตลาดใหญ่": "83000",
+                    "ตลาดเหนือ": "83000",
+                    "รัษฎา": "83000"
+                },
+                "กะทู้": {
+                    "กะทู้": "83120",
+                    "ป่าตอง": "83150"
+                }
+            },
+            "สงขลา": {
+                "หาดใหญ่": {
+                    "หาดใหญ่": "90110",
+                    "คอหงส์": "90110",
+                    "ควนลัง": "90110"
+                },
+                "เมืองสงขลา": {
+                    "บ่อยาง": "90000",
+                    "เขารูปช้าง": "90000"
+                }
+            }
+        };
+
+        const provinceSelect = document.getElementById('provinceSelect');
+        const districtSelect = document.getElementById('districtSelect');
+        const otherDistrictInput = document.getElementById('otherDistrictInput');
+        const subDistrictSelect = document.getElementById('subDistrictSelect');
+        const otherSubDistrictInput = document.getElementById('otherSubDistrictInput');
+        const postcodeInput = document.getElementById('postcode');
+        const otherPostcodeInput = document.getElementById('otherPostcodeInput');
+        const detailedAddressTextarea = document.getElementById('detailedAddress');
+
+        const fullNameInput = document.getElementById('fullName');
+        const phoneInput = document.getElementById('phone');
+        const productSelect = document.getElementById('productSelect');
+        const shirtSizeSelect = document.getElementById('shirtSize');
+        const shirtColorSelect = document.getElementById('shirtColor');
+        const quantityInput = document.getElementById('quantity');
+        const currentItemPriceDisplay = document.getElementById('currentItemPrice');
+        const purchaseDateInput = document.getElementById('purchaseDate');
+        const deliveryMethodSelect = document.getElementById('deliveryMethod');
+        const paymentMethodSelect = document.getElementById('paymentMethod');
+
+        const addItemButton = document.getElementById('addItemButton');
+        const selectedItemsSummaryDiv = document.getElementById('selectedItemsSummary');
+        const itemsListDiv = document.getElementById('itemsList');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+
+        let selectedItems = [];
+
+        const errorElements = {
+            fullName: document.getElementById('fullNameError'),
+            provinceSelect: document.getElementById('provinceSelectError'),
+            district: document.getElementById('districtError'),
+            subDistrict: document.getElementById('subDistrictError'),
+            postcode: document.getElementById('postcodeError'),
+            detailedAddress: document.getElementById('detailedAddressError'),
+            phone: document.getElementById('phoneError'),
+            productSelect: document.getElementById('productSelectError'),
+            shirtSize: document.getElementById('shirtSizeError'),
+            shirtColor: document.getElementById('shirtColorError'),
+            quantity: document.getElementById('quantityError'),
+            selectedItems: document.getElementById('selectedItemsError'),
+            purchaseDate: document.getElementById('purchaseDateError'),
+            deliveryMethod: document.getElementById('deliveryMethodError'),
+            paymentMethod: document.getElementById('paymentMethodError')
+        };
+
+        function showError(element, message) {
+            if (element) {
+                element.textContent = message;
+                element.classList.add('show');
+                const inputElement = element.previousElementSibling;
+                if (inputElement && (inputElement.tagName === 'INPUT' || inputElement.tagName === 'SELECT' || inputElement.tagName === 'TEXTAREA')) {
+                    inputElement.classList.add('invalid');
+                }
+            }
+        }
+
+        function hideError(element) {
+            if (element) {
+                element.textContent = '';
+                element.classList.remove('show');
+                const inputElement = element.previousElementSibling;
+                if (inputElement && (inputElement.tagName === 'INPUT' || inputElement.tagName === 'SELECT' || inputElement.tagName === 'TEXTAREA')) {
+                    inputElement.classList.remove('invalid');
+                }
+            }
+        }
+
+        function clearDropdown(dropdownElement, defaultText) {
+            dropdownElement.innerHTML = `<option value="">${defaultText}</option>`;
+        }
+
+        function populateProvinces() {
+            clearDropdown(provinceSelect, '-- เลือกจังหวัด --');
+            for (const province in thaiAddresses) {
+                const option = document.createElement('option');
+                option.value = province;
+                option.textContent = province;
+                provinceSelect.appendChild(option);
+            }
+            populateDistricts();
+        }
+
+        function populateDistricts() {
+            clearDropdown(districtSelect, '-- เลือกอำเภอ/เขต --');
+            clearDropdown(subDistrictSelect, '-- เลือกตำบล/แขวง --');
+            postcodeInput.value = '';
+            hideOtherAddressInputs();
+            postcodeInput.readOnly = true;
+
+            const selectedProvince = provinceSelect.value;
+            if (selectedProvince && thaiAddresses[selectedProvince]) {
+                for (const district in thaiAddresses[selectedProvince]) {
+                    const option = document.createElement('option');
+                    option.value = district;
+                    option.textContent = district;
+                    districtSelect.appendChild(option);
+                }
+            }
+            const otherOption = document.createElement('option');
+            otherOption.value = 'other';
+            otherOption.textContent = 'อื่นๆ (ระบุเอง)';
+            districtSelect.appendChild(otherOption);
+            hideError(errorElements.district);
+        }
+
+        function handleDistrictChange() {
+            const selectedProvince = provinceSelect.value;
+            const selectedDistrict = districtSelect.value;
+
+            hideError(errorElements.district);
+            hideError(errorElements.subDistrict);
+            hideError(errorElements.postcode);
+
+            if (selectedDistrict === 'other') {
+                otherDistrictInput.style.display = 'block';
+                otherDistrictInput.setAttribute('required', 'required');
+                otherDistrictInput.focus();
+                otherDistrictInput.value = '';
+
+                subDistrictSelect.style.display = 'none';
+                clearDropdown(subDistrictSelect, '');
+                subDistrictSelect.removeAttribute('required');
+
+                otherSubDistrictInput.style.display = 'block';
+                otherSubDistrictInput.setAttribute('required', 'required');
+                otherSubDistrictInput.value = '';
+
+                postcodeInput.style.display = 'none';
+                postcodeInput.removeAttribute('required');
+                postcodeInput.value = '';
+                postcodeInput.readOnly = true;
+
+                otherPostcodeInput.style.display = 'block';
+                otherPostcodeInput.setAttribute('required', 'required');
+                otherPostcodeInput.value = '';
+
+            } else {
+                otherDistrictInput.style.display = 'none';
+                otherDistrictInput.removeAttribute('required');
+                otherDistrictInput.value = '';
+
+                districtSelect.setAttribute('required', 'required');
+
+                subDistrictSelect.style.display = 'block';
+                subDistrictSelect.setAttribute('required', 'required');
+
+                otherSubDistrictInput.style.display = 'none';
+                otherSubDistrictInput.removeAttribute('required');
+                otherSubDistrictInput.value = '';
+
+                postcodeInput.style.display = 'block';
+                postcodeInput.setAttribute('required', 'required');
+                postcodeInput.readOnly = true;
+                otherPostcodeInput.style.display = 'none';
+                otherPostcodeInput.removeAttribute('required');
+                otherPostcodeInput.value = '';
+
+                populateSubDistricts();
+            }
+        }
+
+        function populateSubDistricts() {
+            clearDropdown(subDistrictSelect, '-- เลือกตำบล/แขวง --');
+            postcodeInput.value = '';
+            postcodeInput.readOnly = true;
+
+            const selectedProvince = provinceSelect.value;
+            const selectedDistrict = districtSelect.value;
+
+            if (selectedProvince && selectedDistrict && thaiAddresses[selectedProvince] && thaiAddresses[selectedProvince][selectedDistrict]) {
+                for (const subDistrict in thaiAddresses[selectedProvince][selectedDistrict]) {
+                    const option = document.createElement('option');
+                    option.value = subDistrict;
+                    option.textContent = subDistrict;
+                    subDistrictSelect.appendChild(option);
+                }
+            }
+            const otherOption = document.createElement('option');
+            otherOption.value = 'other';
+            otherOption.textContent = 'อื่นๆ (ระบุเอง)';
+            subDistrictSelect.appendChild(otherOption);
+            hideError(errorElements.subDistrict);
+        }
+
+        function handleSubDistrictChange() {
+            const selectedSubDistrict = subDistrictSelect.value;
+            hideError(errorElements.subDistrict);
+            hideError(errorElements.postcode);
+
+            if (selectedSubDistrict === 'other') {
+                subDistrictSelect.removeAttribute('required');
+
+                otherSubDistrictInput.style.display = 'block';
+                otherSubDistrictInput.setAttribute('required', 'required');
+                otherSubDistrictInput.focus();
+                otherSubDistrictInput.value = '';
+
+                postcodeInput.style.display = 'none';
+                postcodeInput.removeAttribute('required');
+                postcodeInput.value = '';
+                postcodeInput.readOnly = true;
+
+                otherPostcodeInput.style.display = 'block';
+                otherPostcodeInput.setAttribute('required', 'required');
+                otherPostcodeInput.value = '';
+
+            } else {
+                subDistrictSelect.setAttribute('required', 'required');
+
+                otherSubDistrictInput.style.display = 'none';
+                otherSubDistrictInput.removeAttribute('required');
+                otherSubDistrictInput.value = '';
+
+                postcodeInput.style.display = 'block';
+                postcodeInput.setAttribute('required', 'required');
+                postcodeInput.readOnly = true;
+                otherPostcodeInput.style.display = 'none';
+                otherPostcodeInput.removeAttribute('required');
+                otherPostcodeInput.value = '';
+
+                populatePostcode();
+            }
+        }
+
+        function populatePostcode() {
+            postcodeInput.value = '';
+            postcodeInput.readOnly = true;
+
+            const selectedProvince = provinceSelect.value;
+            const selectedDistrict = districtSelect.value;
+            const selectedSubDistrict = subDistrictSelect.value;
+
+            if (selectedProvince && selectedDistrict && selectedSubDistrict &&
+                thaiAddresses[selectedProvince] && thaiAddresses[selectedProvince][selectedDistrict] &&
+                thaiAddresses[selectedProvince][selectedDistrict][selectedSubDistrict]) {
+                postcodeInput.value = thaiAddresses[selectedProvince][selectedDistrict][selectedSubDistrict];
+            }
+        }
+
+        function hideOtherAddressInputs() {
+            otherDistrictInput.style.display = 'none';
+            otherDistrictInput.removeAttribute('required');
+            otherDistrictInput.value = '';
+            
+            otherSubDistrictInput.style.display = 'none';
+            otherSubDistrictInput.removeAttribute('required');
+            otherSubDistrictInput.value = '';
+
+            otherPostcodeInput.style.display = 'none';
+            otherPostcodeInput.removeAttribute('required');
+            otherPostcodeInput.value = '';
+
+            postcodeInput.readOnly = true;
+        }
+
+        function toggleShirtOptions() {
+            const shirtOptionsDiv = document.getElementById('shirtOptions');
+            const shirtSizeSelect = document.getElementById('shirtSize');
+            const shirtColorSelect = document.getElementById('shirtColor');
+
+            hideError(errorElements.productSelect);
+            hideError(errorElements.shirtSize);
+            hideError(errorElements.shirtColor);
+
+            if (productSelect.value === 'เสื้อ') {
+                shirtOptionsDiv.style.display = 'block';
+                shirtSizeSelect.setAttribute('required', 'required');
+                shirtColorSelect.setAttribute('required', 'required');
+            } else {
+                shirtOptionsDiv.style.display = 'none';
+                shirtSizeSelect.removeAttribute('required');
+                shirtColorSelect.removeAttribute('required');
+                shirtSizeSelect.value = "";
+                shirtColorSelect.value = "";
+            }
+        }
+
+        function updateProductImage() {
+            const productDisplayImage = document.getElementById('productDisplayImage');
+            let imagePath = defaultProductImage;
+
+            if (productSelect.value === 'เสื้อ') {
+                if (shirtColorSelect.value === 'ขาว') {
+                    imagePath = 'WhiteshirtMJU.png';
+                } else if (shirtColorSelect.value === 'ดำ') {
+                    imagePath = 'BlackshirtMJU.png';
+                } else {
+                    imagePath = defaultProductImage;
+                }
+            } else if (productSelect.value === 'กระเป๋า') {
+                imagePath = 'MJUbag.png';
+            } else if (productSelect.value === 'แก้ว') {
+                imagePath = 'glassMJU.png';
+            } else if (productSelect.value === 'หมวก') {
+                imagePath = 'capMJU.png';
+            } else if (productSelect.value === 'ร่ม') {
+                imagePath = 'umbrella.png';
+            } else if (productSelect.value === 'เข็มกลัด') {
+                imagePath = 'badge.png';
+            } else if (productSelect.value === 'สมุด') {
+                imagePath = 'book.png';
+            } else if (productSelect.value === 'ปากกา') {
+                imagePath = 'pen.png';
+            } else {
+                imagePath = defaultProductImage;
+            }
+
+            productDisplayImage.src = imagePath;
+            productDisplayImage.onerror = function() {
+                this.src = noImageAvailable;
+                this.onerror = null;
+            };
+        }
+
+        function toggleQRCodeDisplay() {
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+            if (paymentMethodSelect.value === 'โอนเงิน') {
+                qrCodeContainer.style.display = 'flex';
+            } else {
+                qrCodeContainer.style.display = 'none';
+            }
+            hideError(errorElements.paymentMethod);
+        }
+
+        function calculateItemPrice(product, size, color, quantity) {
+            let price = 0;
+            if (product === 'เสื้อ') {
+                price = productPrices['เสื้อ'][size] !== undefined ? productPrices['เสื้อ'][size] : productPrices['เสื้อ']['default'];
+            } else {
+                price = productPrices[product];
+            }
+            return (price || 0) * quantity;
+        }
+
+        function updateCurrentItemPrice() {
+            const product = productSelect.value;
+            const quantity = parseInt(quantityInput.value, 10);
+            const shirtSize = product === 'เสื้อ' ? shirtSizeSelect.value : '';
+            const shirtColor = product === 'เสื้อ' ? shirtColorSelect.value : '';
+
+            if (product && quantity >= 1) {
+                const calculatedPrice = calculateItemPrice(product, shirtSize, shirtColor, quantity);
+                currentItemPriceDisplay.textContent = `ราคา: ${calculatedPrice} บาท`;
+            } else {
+                currentItemPriceDisplay.textContent = `ราคา: 0 บาท`;
+            }
+        }
+
+        function validateItemSelection() {
+            let isValid = true;
+
+            isValid = validateField(productSelect, errorElements.productSelect,
+                (select) => select.value !== '',
+                'กรุณาเลือกรายการสินค้า') && isValid;
+
+            if (productSelect.value === 'เสื้อ') {
+                isValid = validateField(shirtSizeSelect, errorElements.shirtSize,
+                    (select) => select.value !== '',
+                    'กรุณาเลือกขนาดเสื้อ') && isValid;
+                isValid = validateField(shirtColorSelect, errorElements.shirtColor,
+                    (select) => select.value !== '',
+                    'กรุณาเลือกสีเสื้อ') && isValid;
+            }
+
+            isValid = validateField(quantityInput, errorElements.quantity,
+                (input) => {
+                    const val = parseInt(input.value, 10);
+                    return !isNaN(val) && val >= 1;
+                },
+                'กรุณากรอกจำนวนสินค้าอย่างน้อย 1 ชิ้น') && isValid;
+            
+            return isValid;
+        }
+
+        addItemButton.addEventListener('click', () => {
+            if (!validateItemSelection()) {
+                const firstInvalidInput = document.querySelector('.add-item-btn').previousElementSibling;
+                if (firstInvalidInput && firstInvalidInput.classList.contains('invalid')) {
+                     firstInvalidInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                     firstInvalidInput.focus();
+                } else {
+                    productSelect.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    productSelect.focus();
+                }
+                return;
+            }
+
+            const product = productSelect.value;
+            const quantity = parseInt(quantityInput.value, 10);
+            const shirtSize = product === 'เสื้อ' ? shirtSizeSelect.value : '';
+            const shirtColor = product === 'เสื้อ' ? shirtColorSelect.value : '';
+            const itemPrice = calculateItemPrice(product, shirtSize, shirtColor, quantity);
+
+            let itemDescription = product;
+            if (product === 'เสื้อ') {
+                itemDescription += ` (ขนาด: ${shirtSize}, สี: ${shirtColor})`;
+            }
+
+            const existingItemIndex = selectedItems.findIndex(item => 
+                item.product === product && 
+                item.shirtSize === shirtSize && 
+                item.shirtColor === shirtColor
+            );
+
+            if (existingItemIndex > -1) {
+                selectedItems[existingItemIndex].quantity += quantity;
+                selectedItems[existingItemIndex].totalPrice += itemPrice;
+            } else {
+                selectedItems.push({
+                    product: product,
+                    shirtSize: shirtSize,
+                    shirtColor: shirtColor,
+                    quantity: quantity,
+                    unitPrice: itemPrice / quantity,
+                    totalPrice: itemPrice
+                });
+            }
+            
+            renderSelectedItems();
+            resetProductSelection();
+            hideError(errorElements.selectedItems);
+        });
+
+        function renderSelectedItems() {
+            itemsListDiv.innerHTML = '';
+            let overallTotalPrice = 0;
+
+            if (selectedItems.length === 0) {
+                selectedItemsSummaryDiv.style.display = 'none';
+                totalPriceDisplay.textContent = 'ราคารวม: 0 บาท';
+                return;
+            }
+
+            selectedItemsSummaryDiv.style.display = 'block';
+
+            selectedItems.forEach((item, index) => {
+                let itemText = `${item.product}`;
+                if (item.product === 'เสื้อ') {
+                    itemText += ` (ขนาด: ${item.shirtSize}, สี: ${item.shirtColor})`;
+                }
+                itemText += ` x ${item.quantity} ชิ้น`;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('selected-item');
+                itemDiv.innerHTML = `
+                    <span class="item-details">${itemText}</span>
+                    <span class="item-price">${item.totalPrice} บาท</span>
+                    <button type="button" class="remove-btn" data-index="${index}">ลบ</button>
+                `;
+                itemsListDiv.appendChild(itemDiv);
+                overallTotalPrice += item.totalPrice;
+            });
+
+            totalPriceDisplay.textContent = `ราคารวม: ${overallTotalPrice} บาท`;
+
+            itemsListDiv.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const indexToRemove = parseInt(event.target.dataset.index, 10);
+                    selectedItems.splice(indexToRemove, 1);
+                    renderSelectedItems();
+                });
+            });
+        }
+
+        function resetProductSelection() {
+            productSelect.value = '';
+            quantityInput.value = 1;
+            toggleShirtOptions();
+            updateProductImage();
+            updateCurrentItemPrice();
+            hideError(errorElements.productSelect);
+            hideError(errorElements.shirtSize);
+            hideError(errorElements.shirtColor);
+            hideError(errorElements.quantity);
+        }
+
+
+        function validateField(inputElement, errorElement, validationFn, errorMessage) {
+            if (!inputElement || !errorElement) return true;
+
+            const isValid = validationFn(inputElement);
+            if (!isValid) {
+                showError(errorElement, errorMessage);
+                inputElement.classList.add('invalid');
+            } else {
+                hideError(errorElement);
+                inputElement.classList.remove('invalid');
+            }
+            return isValid;
+        }
+
+        function validateMainFormFields() {
+            let isValid = true;
+
+            isValid = validateField(fullNameInput, errorElements.fullName,
+                (input) => input.value.trim() !== '' && /^[A-Za-zก-ฮ\s]+$/.test(input.value.trim()),
+                'กรุณากรอกชื่อ-นามสกุลให้ถูกต้อง (เฉพาะตัวอักษร)') && isValid;
+
+            isValid = validateField(provinceSelect, errorElements.provinceSelect,
+                (select) => select.value !== '',
+                'กรุณาเลือกจังหวัด') && isValid;
+
+            if (districtSelect.value === 'other') {
+                isValid = validateField(otherDistrictInput, errorElements.district,
+                    (input) => input.value.trim() !== '',
+                    'กรุณาระบุอำเภอ/เขต') && isValid;
+            } else {
+                isValid = validateField(districtSelect, errorElements.district,
+                    (select) => select.value !== '',
+                    'กรุณาเลือกอำเภอ/เขต') && isValid;
+            }
+
+            if (subDistrictSelect.value === 'other') {
+                isValid = validateField(otherSubDistrictInput, errorElements.subDistrict,
+                    (input) => input.value.trim() !== '',
+                    'กรุณาระบุตำบล/แขวง') && isValid;
+            } else if (districtSelect.value !== 'other') {
+                isValid = validateField(subDistrictSelect, errorElements.subDistrict,
+                    (select) => select.value !== '',
+                    'กรุณาเลือกตำบล/แขวง') && isValid;
+            }
+
+            let postcodeValue = '';
+            let postcodeInputToValidate = null;
+
+            if (districtSelect.value === 'other' || subDistrictSelect.value === 'other') {
+                postcodeValue = otherPostcodeInput.value.trim();
+                postcodeInputToValidate = otherPostcodeInput;
+            } else {
+                postcodeValue = postcodeInput.value.trim();
+                postcodeInputToValidate = postcodeInput;
+            }
+
+            isValid = validateField(postcodeInputToValidate, errorElements.postcode,
+                (input) => input.value.trim() !== '' && /^[0-9]{5}$/.test(input.value.trim()),
+                'กรุณากรอกรหัสไปรษณีย์ 5 หลักให้ถูกต้อง') && isValid;
+
+            isValid = validateField(detailedAddressTextarea, errorElements.detailedAddress,
+                (input) => input.value.trim() !== '',
+                'กรุณากรอกรายละเอียดที่อยู่') && isValid;
+
+            isValid = validateField(phoneInput, errorElements.phone,
+                (input) => input.value.trim() !== '' && /^[0-9]{10}$/.test(input.value.trim()),
+                'กรุณากรอกเบอร์โทรศัพท์ 10 หลัก') && isValid;
+            
+            if (selectedItems.length === 0) {
+                showError(errorElements.selectedItems, 'กรุณาเพิ่มสินค้าลงในรายการอย่างน้อย 1 ชิ้น');
+                isValid = false;
+            } else {
+                hideError(errorElements.selectedItems);
+            }
+
+            isValid = validateField(purchaseDateInput, errorElements.purchaseDate,
+                (input) => {
+                    const selectedDate = new Date(input.value);
+                    const minDate = new Date('2025-07-29');
+                    const maxDate = new Date('2025-08-31');
+                    selectedDate.setHours(0,0,0,0);
+                    minDate.setHours(0,0,0,0);
+                    maxDate.setHours(0,0,0,0);
+                    return input.value.trim() !== '' && selectedDate >= minDate && selectedDate <= maxDate;
+                },
+                'กรุณาเลือกวันที่ซื้อระหว่าง 29 กรกฎาคม 2568 - 31 สิงหาคม 2568') && isValid;
+
+            isValid = validateField(deliveryMethodSelect, errorElements.deliveryMethod,
+                (select) => select.value !== '',
+                'กรุณาเลือกวิธีรับสินค้า') && isValid;
+
+            isValid = validateField(paymentMethodSelect, errorElements.paymentMethod,
+                (select) => select.value !== '',
+                'กรุณาเลือกช่องทางชำระเงิน') && isValid;
+
+            return isValid;
+        }
+
+        const confirmationModal = document.getElementById('confirmationModal');
+        const modalSummary = document.getElementById('modalSummary');
+        const confirmSubmitBtn = document.getElementById('confirmSubmit');
+        const cancelConfirmBtn = document.getElementById('cancelConfirm');
+
+        function showConfirmationModal(formData) {
+            let summaryHtml = '';
+            summaryHtml += `<p><strong>ชื่อ-นามสกุล:</strong> ${formData.fullName}</p>`;
+            summaryHtml += `<p><strong>จังหวัด:</strong> ${formData.province}</p>`;
+            summaryHtml += `<p><strong>อำเภอ/เขต:</strong> ${formData.district}</p>`;
+            summaryHtml += `<p><strong>ตำบล/แขวง:</strong> ${formData.subDistrict}</p>`;
+            summaryHtml += `<p><strong>รหัสไปรษณีย์:</strong> ${formData.postcode}</p>`;
+            summaryHtml += `<p><strong>รายละเอียดที่อยู่:</strong> ${formData.detailedAddress}</p>`;
+            summaryHtml += `<p><strong>เบอร์โทร:</strong> ${formData.phone}</p>`;
+            
+            summaryHtml += `<h3>รายการสินค้า:</h3><ul>`;
+            formData.items.forEach(item => {
+                let itemDetail = `${item.product}`;
+                if (item.product === 'เสื้อ') {
+                    itemDetail += ` (ขนาด: ${item.shirtSize}, สี: ${item.shirtColor})`;
+                }
+                summaryHtml += `<li>${itemDetail} x ${item.quantity} ชิ้น (${item.totalPrice} บาท)</li>`;
+            });
+            summaryHtml += `</ul>`;
+            summaryHtml += `<p><strong>ราคารวมทั้งหมด:</strong> ${formData.overallTotalPrice} บาท</p>`;
+
+            if (formData.additionalDetails) {
+                summaryHtml += `<p><strong>รายละเอียดเพิ่มเติม:</strong> ${formData.additionalDetails}</p>`;
+            }
+            summaryHtml += `<p><strong>วันที่ซื้อ:</strong> ${formData.purchaseDate}</p>`;
+            summaryHtml += `<p><strong>วิธีรับสินค้า:</strong> ${formData.deliveryMethod}</p>`;
+            summaryHtml += `<p><strong>ช่องทางชำระเงิน:</strong> ${formData.paymentMethod}</p>`;
+
+            modalSummary.innerHTML = summaryHtml;
+            confirmationModal.style.display = 'flex';
+        }
+
+        function hideConfirmationModal() {
+            confirmationModal.style.display = 'none';
+        }
+
+        confirmSubmitBtn.addEventListener('click', () => {
+            const formData = collectFormData();
+            console.log('Final data to send:', formData);
+            alert('ส่งข้อมูลสำเร็จแล้ว!');
+            hideConfirmationModal();
+            document.getElementById('customerForm').reset();
+            populateProvinces();
+            resetProductSelection();
+            selectedItems = [];
+            renderSelectedItems();
+            toggleQRCodeDisplay();
+        });
+
+        cancelConfirmBtn.addEventListener('click', () => {
+            hideConfirmationModal();
+        });
+
+        function collectFormData() {
+            let overallTotalPrice = selectedItems.reduce((total, item) => total + item.totalPrice, 0);
+
+            return {
+                fullName: fullNameInput.value.trim(),
+                province: provinceSelect.value,
+                district: districtSelect.value === 'other' ? otherDistrictInput.value.trim() : districtSelect.value,
+                subDistrict: subDistrictSelect.value === 'other' ? otherSubDistrictInput.value.trim() : subDistrictSelect.value,
+                postcode: (districtSelect.value === 'other' || subDistrictSelect.value === 'other') ? otherPostcodeInput.value.trim() : postcodeInput.value,
+                detailedAddress: detailedAddressTextarea.value.trim(),
+                phone: phoneInput.value.trim(),
+                items: selectedItems,
+                overallTotalPrice: overallTotalPrice,
+                additionalDetails: document.getElementById('additionalDetails').value.trim(),
+                purchaseDate: purchaseDateInput.value,
+                deliveryMethod: deliveryMethodSelect.value,
+                paymentMethod: paymentMethodSelect.value
+            };
+        }
+
+        document.getElementById('customerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (validateMainFormFields()) {
+                const formData = collectFormData();
+                showConfirmationModal(formData);
+            } else {
+                const firstInvalidInput = document.querySelector('.invalid');
+                if (firstInvalidInput) {
+                    firstInvalidInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstInvalidInput.focus();
+                }
+            }
+        });
+
+        const formElements = [
+            fullNameInput, provinceSelect, districtSelect, otherDistrictInput,
+            subDistrictSelect, otherSubDistrictInput, postcodeInput, otherPostcodeInput,
+            detailedAddressTextarea, phoneInput,
+            purchaseDateInput, deliveryMethodSelect, paymentMethodSelect
+        ];
+
+        formElements.forEach(element => {
+            element.addEventListener('blur', () => {
+                validateMainFormFields();
+            });
+            element.addEventListener('change', () => {
+                validateMainFormFields();
+            });
+        });
+
+        const productSelectionElements = [
+            productSelect, shirtSizeSelect, shirtColorSelect, quantityInput
+        ];
+        productSelectionElements.forEach(element => {
+            element.addEventListener('blur', validateItemSelection);
+            element.addEventListener('change', validateItemSelection);
+            if (element.type === 'number') {
+                element.addEventListener('input', validateItemSelection);
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateProvinces();
+            resetProductSelection();
+            renderSelectedItems();
+            toggleQRCodeDisplay();
+
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            purchaseDateInput.value = `${year}-${month}-${day}`;
+            purchaseDateInput.min = '2025-07-29';
+            purchaseDateInput.max = '2025-08-31';
+
+            hideOtherAddressInputs();
+        });
+    </script>
+</body>
+</html>

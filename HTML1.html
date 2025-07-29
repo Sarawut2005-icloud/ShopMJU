@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รวมของที่ระลึก 30ปี วิทยาการคอมพิวเตอร์ - Admin</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #388e3c;
+            --secondary: #8bc34a;
+            --accent: #cddc39;
+            --bg: #f7faf7;
+            --white: #fff;
+            --gray: #f0f4f0;
+            --shadow: 0 8px 32px rgba(56, 142, 60, 0.10);
+            --radius: 22px;
+        }
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(120deg, #e8f5e9 0%, #f0f4f0 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .pattern {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.07;
+            background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+        }
+        .main-wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0; 
+            width: 100%; 
+        }
+        .card {
+            width: 100%;
+            max-width: 540px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 44px 36px 36px 36px;
+            position: relative;
+            z-index: 1;
+            animation: fadein 0.7s cubic-bezier(.4,0,.2,1);
+            overflow: hidden;
+        }
+        .maejo-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .maejo-header img {
+            height: 54px;
+            border-radius: 14px;
+            background: #e8f5e9;
+            padding: 5px;
+            box-shadow: 0 2px 8px #c8e6c930;
+        }
+        .maejo-header span {
+            font-size: 1.35em;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-shadow: 0 1px 0 #cddc39a0;
+        }
+        .bar {
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+            border-radius: 0 0 14px 14px;
+            margin-bottom: 22px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.1em;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #4e5d6c;
+            text-align: center;
+            font-size: 1.13em;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 26px;
+        }
+        label {
+            display: block;
+            margin: 18px 0 8px;
+            color: #2d3a4b;
+            font-weight: 600;
+            font-size: 1.04em;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.7px solid #c8e6c9;
+            border-radius: 12px;
+            margin-bottom: 13px;
+            font-size: 1.04em;
+            background: var(--gray);
+            transition: border 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus {
+            border: 1.7px solid var(--primary);
+            outline: none;
+            background: #e8f5e9;
+            box-shadow: 0 0 0 2px #cddc39a0;
+        }
+        .btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 0;
+            font-size: 1.12em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 12px;
+            box-shadow: 0 2px 10px rgba(56, 142, 60, 0.10);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .btn:hover, .btn:focus {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            box-shadow: 0 4px 18px rgba(139, 195, 74, 0.13);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .nav-btns {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            margin-top: 32px;
+        }
+        .nav-btns .btn {
+            width: 48%;
+            margin-top: 0;
+        }
+        .stock-list {
+            margin-bottom: 26px;
+            background: #e8f5e9;
+            border-radius: 15px;
+            padding: 20px 16px 12px 16px;
+            box-shadow: 0 1px 8px #c8e6c930;
+        }
+        .stock-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 13px;
+            font-size: 1.09em;
+            color: #2e7d32;
+            font-weight: 500;
+            padding: 8px; 
+            border-radius: 10px;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s; 
+        }
+        .stock-item:hover {
+            background: #d4eed5; 
+            transform: translateY(-3px); 
+            box-shadow: 0 4px 15px rgba(56, 142, 60, 0.15); 
+        }
+        .stock-item:last-child { margin-bottom: 0; }
+        .stock-item img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-right: 15px;
+            border: 1.7px solid #c8e6c9;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(139, 195, 74, 0.07);
+            flex-shrink: 0;
+        }
+        
+        .stock-item-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .stock-item-name {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stock-item-price {
+            font-weight: 600;
+            color: #4CAF50;
+            font-size: 0.95em;
+        }
+        .stock-item-details {
+            font-size: 0.9em;
+            color: #4e5d6c;
+            line-height: 1.4;
+        }
+        input[type="file"] {
+            background: none;
+            border: 1.7px solid #c8e6c9; 
+            padding-left: 14px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        input[type="file"]::file-selector-button { 
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-right: 15px;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background: var(--primary);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 44px;
+            max-height: 130px;
+        }
+        
+        .decor {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.13;
+            pointer-events: none;
+        }
+        .decor.circle1 {
+            width: 110px; height: 110px;
+            background: radial-gradient(circle at 30% 30%, var(--primary) 60%, transparent 100%);
+            border-radius: 50%;
+            top: -40px; left: -40px;
+        }
+        .decor.circle2 {
+            width: 70px; height: 70px;
+            background: radial-gradient(circle at 70% 70%, var(--accent) 70%, transparent 100%);
+            border-radius: 50%;
+            bottom: -30px; right: -30px;
+        }
+        .decor.triangle {
+            width: 0; height: 0;
+            border-left: 44px solid transparent;
+            border-right: 44px solid transparent;
+            border-bottom: 76px solid var(--secondary);
+            top: 18px; right: -30px;
+            opacity: 0.09;
+        }
+        @media (max-width: 600px) {
+            .card { padding: 18px 2vw 18px 2vw; }
+            h1 { font-size: 1.2em; }
+            .maejo-header img { height: 36px; }
+            .decor.circle1, .decor.circle2 { display: none; }
+        }
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: none;}
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="main-wrap">
+        <div class="card" id="page1">
+            <div class="decor circle1"></div>
+            <div class="decor circle2"></div>
+            <div class="decor triangle"></div>
+            <div class="maejo-header">
+                <img src="https://upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/800px-MJU_LOGO.svg.png" alt="Maejo Logo" onerror="this.src='no_image_available.png';">
+                <span>Maejo University</span>
+            </div>
+            <div class="bar"></div>
+            <h1>รวมของที่ระลึกสาขาวิชาวิทยาการคอมพิวเตอร์ 30ปี</h1>
+            <h2>Admin - จัดการ Stock สินค้า</h2>
+            <div class="stock-list" id="stockList">
+                </div>
+            <label>เพิ่มสินค้าใหม่</label>
+            <form id="addProductForm">
+                <input type="text" id="productName" placeholder="ชื่อสินค้า" required>
+                <input type="text" id="productDetails" placeholder="สี / ขนาด (ถ้ามี, เช่น ขาว, S)">
+                <input type="number" id="productStock" placeholder="จำนวนในสต็อก" min="0" required>
+                <input type="number" id="productPrice" placeholder="ราคา (บาท)" step="10" min="0" required>
+                <input type="file" id="productImage" accept="image/*">
+                <button type="submit" class="btn">บันทึกสินค้า</button>
+            </form>
+            <div class="nav-btns">
+                <span></span>
+                <button class="btn" onclick="window.location.href='HTML2.html'">ไปหน้าลูกค้า &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const noImageAvailable = 'no_image_available.png'; 
+
+        
+        let stockItems = [
+            { name: "เสื้อ", price: 299, details: "สี: ขาว, ดำ \nขนาด: S, M, L, XL, XXL", image: "BlackshirtMJU.png" },
+            { name: "กระเป๋า", price: 350, details: "", image: "MJUbag.png" },
+            { name: "แก้ว", price: 180, details: "", image: "glassMJU.png" },
+            { name: "หมวก", price: 220, details: "", image: "capMJU.png" },
+            { name: "ร่ม", price: 280, details: "", image: "umbrella.png" },
+            { name: "เข็มกลัด", price: 80, details: "", image: "badge.png" },
+            { name: "สมุด", price: 120, details: "", image: "book.png" },
+            { name: "ปากกา", price: 60, details: "", image: "pen.png" },
+        ];
+
+        function renderStockItems() {
+            const stockListDiv = document.getElementById('stockList');
+            stockListDiv.innerHTML = ''; 
+
+            stockItems.forEach(item => {
+                const stockItemDiv = document.createElement('div');
+                stockItemDiv.className = 'stock-item';
+
+                stockItemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='${noImageAvailable}';">
+                    <div class="stock-item-content">
+                        <span class="stock-item-name">${item.name} <span class="stock-item-price">${item.price} บาท</span></span>
+                        ${item.details ? `<span class="stock-item-details">${item.details.replace(/\n/g, '<br>')}</span>` : ''}
+                    </div>
+                `;
+                stockListDiv.appendChild(stockItemDiv);
+            });
+        }
+
+        
+        document.getElementById('addProductForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const productName = document.getElementById('productName').value;
+            const productDetails = document.getElementById('productDetails').value;
+            const productStock = document.getElementById('productStock').value;
+            const productPrice = document.getElementById('productPrice').value;
+            const productImageInput = document.getElementById('productImage');
+            const productImageFile = productImageInput.files[0];
+
+            if (!productName || !productStock || !productPrice) {
+                alert('กรุณากรอกข้อมูลสินค้าให้ครบถ้วน (ชื่อ, จำนวน, ราคา)');
+                return;
+            }
+
+            if (productImageFile) {
+               
+                imageUrl = URL.createObjectURL(productImageFile);
+            }
+
+            const newItem = {
+                name: productName,
+                details: productDetails,
+                price: parseFloat(productPrice),
+                stock: parseInt(productStock),
+                image: imageUrl
+            };
+
+            stockItems.push(newItem); 
+            renderStockItems(); 
+
+            alert(`เพิ่มสินค้า "${productName}" จำนวน ${productStock} ชิ้น ราคา ${productPrice} บาท สำเร็จแล้ว!`);
+
+            
+            this.reset();
+            if (productImageFile) {
+                
+                URL.revokeObjectURL(imageUrl);
+            }
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', renderStockItems);
+    </script>
+</body>
+</html>
